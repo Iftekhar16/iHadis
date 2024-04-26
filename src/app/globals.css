@@ -32,3 +32,16 @@
 .bangla {
     font-family: 'kalpurush';
 }
+
+@font-face {
+    font-family: 'me_quran';
+    src: url('/fonts/me_quran Regular.ttf');
+}
+
+.arabic {
+    font-family: 'me_quran';
+}
+
+.word-spacing-loose{
+    word-spacing: 1.5rem;
+}
