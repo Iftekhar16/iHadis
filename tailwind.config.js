@@ -11,6 +11,7 @@ module.exports = {
             'light1' : '#ffffff',
             'light2' : '#fafbfb',
             'light3' : '#f2f4f6',
+            'light4' : '#848b88',
 
             'accent1' : '#ebfcf6',
             'accent2' : '#2b9e76',
