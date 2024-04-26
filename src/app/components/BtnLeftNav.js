@@ -1,3 +1,5 @@
+
+
 export default function BtnLeftNav({iconOutlined, iconFilled, isActive, isSupport}){
     return(
         <button className={`btn-nav group w-12 h-12 flex justify-center items-center rounded-lg transition ${isActive?"bg-accent2 text-light1":"bg-light1 hover:bg-light3"} ${isSupport?"absolute bottom-6 left-1/2 -translate-x-1/2":""}`}>

@@ -2,6 +2,7 @@
 import NextImage from "./components/NextImage";
 import BtnLeftNav from "./components/BtnLeftNav";
 import Category from "./components/Category";
+import BtnHadithAction from "./components/BtnHadithAction";
 
 export default function Home() {
     return (
@@ -139,26 +140,11 @@ export default function Home() {
                                             <a className="block bangla bg-accent2 text-light1 text-sm font-semibold px-3 py-1 rounded-lg" href="#">সহিহ হাদিস</a>
                                         </div>
                                         <div className="buttons flex items-center gap-7">
-                                            <button className="btn-hadith-action group relative">
-                                                <div className="tag w-fit bg-dark1 text-light1 px-3 py-2 rounded-lg text-xs hidden group-hover:block absolute left-1/2 -translate-x-1/2 -top-[90%] transition">কপি</div>
-                                                <div className="icon text-2xl text-light4 relative top-[2px]"><iconify-icon icon="ph:copy"></iconify-icon></div>
-                                            </button>
-                                            <button className="btn-hadith-action group relative">
-                                                <div className="tag w-fit bg-dark1 text-light1 px-3 py-2 rounded-lg text-xs hidden group-hover:block absolute left-1/2 -translate-x-1/2 -top-[90%] transition">বুকমার্ক</div>
-                                                <div className="icon text-2xl text-light4 relative top-[2px]"><iconify-icon icon="iconoir:bookmark"></iconify-icon></div>
-                                            </button>
-                                            <button className="btn-hadith-action group relative">
-                                                <div className="tag w-fit bg-dark1 text-light1 px-3 py-2 rounded-lg text-xs hidden group-hover:block absolute left-1/2 -translate-x-1/2 -top-[90%] transition">শেয়ার</div>
-                                                <div className="icon text-2xl text-light4 relative top-[2px]"><iconify-icon icon="material-symbols:share-outline"></iconify-icon></div>
-                                            </button>
-                                            <button className="btn-hadith-action group relative">
-                                                <div className="tag w-fit bg-dark1 text-light1 px-3 py-2 rounded-lg text-xs hidden group-hover:block absolute left-1/2 -translate-x-1/2 -top-[90%] transition">রিপোর্ট</div>
-                                                <div className="icon text-2xl text-light4 relative top-[2px]"><iconify-icon icon="mdi:about-circle-outline"></iconify-icon></div>
-                                            </button>
-                                            <button className="btn-hadith-action group relative">
-                                                <div className="tag w-fit bg-dark1 text-light1 px-3 py-2 rounded-lg text-xs hidden group-hover:block absolute left-1/2 -translate-x-1/2 -top-[90%] transition">ডিরেক্ট</div>
-                                                <div className="icon text-2xl text-light4 relative top-[2px]"><iconify-icon icon="lucide:external-link"></iconify-icon></div>
-                                            </button>
+                                            <BtnHadithAction icon="ph:copy" alertText="কপি"/>
+                                            <BtnHadithAction icon="iconoir:bookmark" alertText="বুকমার্ক"/>
+                                            <BtnHadithAction icon="material-symbols:share-outline" alertText="শেয়ার"/>
+                                            <BtnHadithAction icon="mdi:about-circle-outline" alertText="রিপোর্ট"/>
+                                            <BtnHadithAction icon="lucide:external-link" alertText="ডিরেক্ট"/>
                                         </div>
                                     </div>
                                 </div>
