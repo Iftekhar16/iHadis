@@ -1,12 +1,36 @@
-// import Image from "next/image";
+"use client"
 import NextImage from "./components/NextImage";
 import BtnLeftNav from "./components/BtnLeftNav";
-import Category from "./components/Category";
+import Book from "./components/Book";
+import Chapter from "./components/Chapter";
 import BtnHadithAction from "./components/BtnHadithAction";
+import ModalSettings from "./components/ModalSettings";
+import { useState } from "react";
 
 export default function Home() {
+
+    
+    const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+    function openSettings(){
+        setIsSettingsModalOpen(true);
+    }
+    function closeSettings(){
+        setIsSettingsModalOpen(false);
+    }
+
+
+    const [tabCategory, setTabCategory] = useState(true);
+    function showBooks() {
+        setTabCategory(true);
+    }
+    function showChapters() {
+        setTabCategory(false);
+    }
+
     return (
         <main className="bg-light3 text-dark4 w-[100svw] h-[100svh] overflow-hidden font-inter">
+            <ModalSettings isSettingsModalOpen={isSettingsModalOpen} closeSettings={closeSettings}/>
+            {/* <ModalSettings/> */}
             <div className="top-nav-container bg-light1 h-[80px] flex justify-between items-center px-5">
                 <div className="logo-container flex items-center gap-3">
                     <div className="img-container w-11 h-11 relative">
@@ -22,7 +46,10 @@ export default function Home() {
                         <div className="icon absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400"><div className="relative top-1"><iconify-icon icon="mingcute:search-line"></iconify-icon></div></div>
                         <input className="w-96 border-2 border-light3 rounded-lg px-10 py-3" type="text" placeholder="Search Hadith"/>
                     </form>
-                    <button className="btn-settings bg-accent2 text-light1 text-xl flex justify-center items-center w-10 h-10 rounded-lg">
+                    <button className="btn-settings bg-accent2 text-light1 text-xl flex justify-center items-center w-10 h-10 rounded-lg" onClick={openSettings}>
+                        <div className="icon relative top-1"><iconify-icon icon="ph:gear-fill"></iconify-icon></div>
+                    </button>
+                    <button className="btn-settings bg-accent2 text-light1 text-xl flex justify-center items-center w-10 h-10 rounded-lg" onClick={openSettings}>
                         <div className="icon relative top-1"><iconify-icon icon="ph:gear-fill"></iconify-icon></div>
                     </button>
                 </div>
@@ -59,22 +86,31 @@ export default function Home() {
 
                     <div className="category-col-container w-[300px] h-[calc(100svh-80px-24px)] flex flex-col bg-light1 rounded-lg">
                         <div className="tab-container flex">
-                            <button className="book bg-light1 w-full p-3 rounded-tl-lg">বই</button>
-                            <button className="chapter bg-accent2 text-light1 w-full p-3 rounded-tr-lg">অধ্যায়</button>
+                            <button className="book bg-light1 w-full p-3 rounded-tl-lg" onClick={showBooks}>বই</button>
+                            <button className="chapter bg-accent2 text-light1 w-full p-3 rounded-tr-lg" onClick={showChapters}>অধ্যায়</button>
                         </div>
                         <hr/>
                         <form className="relative m-3" action="">
                             <div className="icon absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400"><div className="relative top-1"><iconify-icon icon="mingcute:search-line"></iconify-icon></div></div>
                             <input className="w-full bg-light3 rounded-lg px-10 py-3" type="text" placeholder="Search Hadith"/>
                         </form>
-                        <div className="categories-container flex flex-col flex-grow-0 overflow-y-scroll pb-3">
-                            <Category isActive={true}/>
-                            <Category/>
-                            <Category/>
-                            <Category/>
-                            <Category/>
-                            <Category/>
-                            <Category/>
+                        <div className={`books-container overflow-y-scroll pb-3 ${tabCategory? "flex flex-col flex-grow-0":"hidden"}`}>
+                            <Book isActive={true}/>
+                            <Book/>
+                            <Book/>
+                            <Book/>
+                            <Book/>
+                            <Book/>
+                            <Book/>
+                        </div>
+                        <div className={`books-container overflow-y-scroll pb-3 ${tabCategory? "hidden":"flex flex-col flex-grow-0"}`}>
+                            <Chapter isActive={true}/>
+                            <Chapter/>
+                            <Chapter/>
+                            <Chapter/>
+                            <Chapter/>
+                            <Chapter/>
+                            <Chapter/>
                         </div>
 
 
