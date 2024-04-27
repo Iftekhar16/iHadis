@@ -15,14 +15,17 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(156, 163, 175);
+    background: rgb(136, 136, 136);
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(156, 163, 175, 0.822);
+    background: rgba(136, 136, 136, 0.822);
 }
+
+
+
 
 @font-face {
     font-family: 'kalpurush';

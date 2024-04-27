@@ -53,7 +53,7 @@ export default function Home() {
                 <div className="search-settings-container flex items-center gap-5">
                     <form className="relative" action="">
                         <div className="icon absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400 dark:text-light4"><div className="relative top-1"><iconify-icon icon="mingcute:search-line"></iconify-icon></div></div>
-                        <input className="w-96 bg-light1 dark:bg-dark1 border-2 dark:border-0 border-light3 dark:border-light2 rounded-lg px-10 py-3" type="text" placeholder="Search Hadith"/>
+                        <input className="w-96 bg-light1 dark:bg-dark1 border-2 border-light3 dark:border-dark1 rounded-lg px-10 py-3" type="text" placeholder="Search For Filter"/>
                     </form>
                     <div className="flex gap-3">
                         <button className="btn-settings bg-accent2 text-light1 text-xl flex justify-center items-center w-10 h-10 rounded-lg" onClick={toggleDark}>
@@ -105,7 +105,7 @@ export default function Home() {
                         <Line/>
                         <form className="relative m-3" action="">
                             <div className="icon absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400"><div className="relative top-1"><iconify-icon icon="mingcute:search-line"></iconify-icon></div></div>
-                            <input className="w-full bg-light1 dark:bg-dark1 rounded-lg px-10 py-3" type="text" placeholder="Search Hadith"/>
+                            <input className="w-full bg-light3 dark:bg-dark1 border-2 border-light3 dark:border-dark1 rounded-lg px-10 py-3" type="text" placeholder="Search Hadith"/>
                         </form>
                         <div className={`books-container overflow-y-scroll pb-3 ${tabCategory? "flex flex-col flex-grow-0":"hidden"}`}>
                             <Book isActive={true}/>
