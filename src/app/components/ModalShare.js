@@ -33,7 +33,7 @@ export default function ModalShare({isModalShareOpen, closeShare}){
                 </div>
                 <div className="title text-xl bangla mb-3">অথবা, লিংক কপি করুন</div>
                 <div className="bg-light3 dark:bg-dark1 rounded-lg px-5 py-3 pr-10 mb-5 relative">
-                    <div className="text">https://ihadis.com/bukhari/hadith/2</div>
+                    <div className="text text-xs">https://ihadis.com/bukhari/hadith/2</div>
                     <button className="absolute top-1/2 -translate-y-1/2 right-3">
                         <div className="icon text-2xl text-light4 relative top-[2px]"><iconify-icon icon="ph:copy"></iconify-icon></div>
                     </button>
