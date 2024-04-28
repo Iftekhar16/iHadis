@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+    color: #ffffff;
+    background: #2b9e76;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 0.3rem;
