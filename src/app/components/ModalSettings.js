@@ -5,7 +5,7 @@ export default function ({isModalSettingsOpen, closeSettings, dark, toggleDark})
     return(
         <div className={`modal-settings-container text-dark4 dark:text-light3 w-[100svw] h-[100svh] z-[100] ${isModalSettingsOpen?"absolute top-0 left-0":"hidden"}`}>
             <div className={`modal-overlay w-[100svw] h-[100svh] bg-dark4 opacity-50 dark:opacity-75 z-[130] ${isModalSettingsOpen ? "absolute top-0 right-0" : "hidden"}`} onClick={closeSettings}></div>
-            <div className={`modal-settings bg-light1 dark:bg-dark3 w-[100svw] xl:w-[350px] h-[100svh] rounded-l-lg shadow-lg overflow-scroll z-[150] absolute top-0 ${isModalSettingsOpen? "right-0":"-right-full"}`}>
+            <div className={`modal-settings bg-light1 dark:bg-dark3 w-[100svw] xl:w-[350px] h-[100svh] xl:rounded-l-lg shadow-lg overflow-scroll z-[150] absolute top-0 ${isModalSettingsOpen? "right-0":"-right-full"}`}>
                 <div className="settings-top bg-light1 dark:bg-dark3 flex justify-between items-center px-5 py-3 sticky top-0">
                     <div className="text bangla text-2xl font-medium">সেটিংস</div>
                     <button className="btn-settings-close text-3xl" onClick={closeSettings}><iconify-icon icon="iconamoon:close-light"></iconify-icon></button>
