@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
         <head>
             {/* favicon */}
-            <link rel="icon" href="/images/logos/home-logo.png"/>
+            <link rel="icon" href="/icon/home-logo.ico"/>
             {/* iconify */}
             <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
         </head>

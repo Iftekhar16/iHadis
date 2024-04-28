@@ -6,9 +6,9 @@ export default function ModalShare({isModalShareOpen, closeShare}){
         <div className={`modal-share-container text-dark4 dark:text-light3 w-[100svw] h-[100svh] z-[100] ${isModalShareOpen?"absolute top-0 left-0":"hidden"}`}>
             <div className={`modal-overlay w-[100svw] h-[100svh] bg-dark4 opacity-50 dark:opacity-75 z-[130] ${isModalShareOpen? "absolute top-0 left-0" : "hidden"}`} onClick={closeShare}></div>
             <div className={`modal-share w-[80svw] xl:w-[40svw] bg-light1 dark:bg-dark3 rounded-lg shadow-lg z-[150] p-5 absolute ${isModalShareOpen? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2":""}`}>
-                <div className="title text-2xl bangla font-bold mb-5">বুকমার্ক</div>
+                <div className="title text-2xl bangla font-bold mb-5">এই দোয়াটি শেয়ার করুন</div>
                 <div className="title text-xl bangla mb-3">সোশ্যাল মিডিয়াতে শেয়ার করুন</div>
-                <div className="share-socials-container flex gap-3 text-2xl text-light1 mb-5">
+                <div className="share-socials-container flex flex-wrap gap-3 text-2xl text-light1 mb-5">
                     <button className="btn-social w-10 h-10 bg-[#3b5998] rounded-full flex justify-center items-center">
                         <div className="icon relative top-1"><iconify-icon icon="ri:facebook-fill"></iconify-icon></div>
                     </button>

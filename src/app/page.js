@@ -13,6 +13,8 @@ import PhoneNav from "./components/PhoneNav";
 
 import ModalBookmark from "./components/ModalBookmark";
 import ModalShare from "./components/ModalShare";
+import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/components/ui/use-toast";
 
 
 // export async function getStaticProps() {
@@ -82,7 +84,9 @@ export default function Home() {
 
 
 
-    
+    const { toast } = useToast();
+
+
     const [isModalBookmarkOpen, setIsModalBookmarkOpen] = useState(false);
     function openBookmark(){
         setIsModalBookmarkOpen(true);
@@ -142,6 +146,8 @@ export default function Home() {
     return (
         <main className={`bg-light3 dark:bg-dark4 text-dark4 dark:text-light3 w-[100svw] h-[100svh] overflow-hidden font-inter ${dark? "dark":""}`}>
             
+            <Toaster/>
+
             <PhoneNav isActive={true}/>
 
             <ModalBookmark isModalBookmarkOpen={isModalBookmarkOpen} closeBookmark={closeBookmark}/>
@@ -151,7 +157,7 @@ export default function Home() {
             <ModalCategory isModalCategoryOpen={isModalCategoryOpen} closeCategory={closeCategory} tabCategory={tabCategory} showBooks={showBooks} showChapters={showChapters} books={books} chapters={chapters}/>
             <ModalSettings isModalSettingsOpen={isModalSettingsOpen} closeSettings={closeSettings} dark={dark} toggleDark={toggleDark}/>
             <div className="top-nav-container bg-light1 dark:bg-dark3 h-[80px] flex justify-between items-center px-5">
-                <div className="logo-container flex items-center gap-3">
+                <a className="logo-container flex items-center gap-3" href="#">
                     <div className="img-container w-11 h-11 relative">
                         <NextImage src={"/images/logos/home-logo.png"} alt={"home-logo"}></NextImage>
                     </div>
@@ -160,7 +166,7 @@ export default function Home() {
                         <div className="title bangla xl:hidden text-lg font-bold text-accent2">আল হাদিস</div>
                         <div className="subtitle hidden xl:block bangla text-sm text-dark1 dark:text-light4">হাদিস পড়ুন শিখুন এবং জানুন</div>
                     </div>
-                </div>
+                </a>
                 <div className="search-settings-container flex items-center gap-5">
                     <form className="relative hidden xl:block" action="">
                         <div className="icon absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400 dark:text-light4"><div className="relative top-1"><iconify-icon icon="mingcute:search-line"></iconify-icon></div></div>
@@ -278,8 +284,10 @@ export default function Home() {
                                                                 <div className="title bangla text-lg text-dark4 dark:text-light3 font-medium">{section.number}</div>
                                                             </div>
                                                             <div className="bangla text-lg text-dark4 dark:text-light3 font-medium px-5 pb-3">{section.title}</div>
-                                                            <Line/>
-                                                            <div className="preface bangla text-dark1 dark:text-light3 font-medium px-5 py-3">{section.preface}</div>
+                                                            <div className={`${section.preface?"":"hidden"}`}>
+                                                                <Line/>
+                                                                <div className="preface bangla text-dark1 dark:text-light3 font-medium px-5 py-3">{section.preface}</div>
+                                                            </div>
                                                         </div>
                                                         {
                                                             hadiths.map((hadith, hadith_index) => {
@@ -306,7 +314,7 @@ export default function Home() {
                                                                             </div>
                                                                             <div className="buttons w-full xl:w-auto flex justify-around xl:justify-normal items-center gap-7">
                                                                                 {/* <BtnHadithAction icon="ph:copy" alertText="কপি"/> */}
-                                                                                <button className="btn-hadith-action group relative">
+                                                                                <button className="btn-hadith-action group relative" variant="outline" onClick={() => {toast({description: "কপি করা হয়েছে",})}}>
                                                                                     <div className="tag w-fit bg-dark1 text-light1 px-3 py-2 rounded-lg text-[11px] hidden group-hover:block absolute left-1/2 -translate-x-1/2 -top-[110%] transition">কপি</div>
                                                                                     <div className="icon text-2xl text-light4 relative top-[2px]"><iconify-icon icon="ph:copy"></iconify-icon></div>
                                                                                 </button>
